@@ -1,0 +1,23 @@
+# This file has the same format as zone.tab
+
+# Countries listed here have more than one Olson name,
+# but really using only a single zone currently
+
+# TODO get rid of this file and let the script
+#      check the "single country" condition
+#      for the next 3-4 years automaticaly
+
+# MCC=255 Ukraine (UA)
+UA	+5026+03031	Europe/Kiev	most locations
+
+# MCC=434, Uzbekistan (UZ)
+UZ	+4120+06918	Asia/Tashkent	east Uzbekistan
+
+# MCC=460, China (CN)
+CN	+3114+12128	Asia/Shanghai	east China - Beijing, Guangdong, Shanghai, etc.
+
+# MCC=502, Malaysia (MY)
+MY	+0310+10142	Asia/Kuala_Lumpur	peninsular Malaysia
+
+# MCC=551, Marshall Islands (MH)
+MH	+0709+17112	Pacific/Majuro	most locations

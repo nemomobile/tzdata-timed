@@ -1,0 +1,182 @@
+# This file has the same format as zone.tab
+
+# Only countries with simple DST/timezone logic
+# have to be listed here
+
+# TODO: remove USA,Canada,Brazil,Autralia etc
+# Those need more carefull handling, not implemented yet
+
+# As the first zone for every country the 'main' zone
+# is listed (that's why Moscow before Kaliningrad)
+
+# MCC=214, Spain (ES)
+# Contains 3 Olson names.
+# African exclaves Ceuta and Melilla are using mainland time
+#     ES +3553-00519 Africa/Ceuta Ceuta & Melilla
+# Thus we have only 2 really different zones here:
+
+ES +4024-00341 Europe/Madrid mainland
+ES +2806-01524 Atlantic/Canary Canary Islands
+
+# MCC=630, Dem.Rep.of Congo (CD) former Zaire
+# Important: the country with MCC=629 is just "Congo (CG)"
+# There are 2 Olon names representing 2 different zones
+# As the DST is not observed here, we have no problems at all
+
+CD -0418+01518 Africa/Kinshasa west Dem. Rep. of Congo
+CD -1140+02728 Africa/Lubumbashi east Dem. Rep. of Congo
+
+# MCC=250, Russian Federation (RU)
+# Using http://en.wikipedia.org/wiki/Time_in_Russia
+RU	+5545+03735	Europe/Moscow	Moscow+00 - west Russia
+
+RU	+5443+02030	Europe/Kaliningrad	Moscow-01 - Kaliningrad
+#                       see above   Moscow+00
+#                       there is no Moscow+01 anymore
+RU	+5651+06036	Asia/Yekaterinburg	Moscow+02 - Urals
+RU	+5500+07324	Asia/Omsk	Moscow+03 - west Siberia
+RU	+5601+09250	Asia/Krasnoyarsk	Moscow+04 - Yenisei River
+RU	+5216+10420	Asia/Irkutsk	Moscow+05 - Lake Baikal
+RU	+6200+12940	Asia/Yakutsk	Moscow+06 - Lena River
+RU	+4310+13156	Asia/Vladivostok	Moscow+07 - Amur River
+RU	+5934+15048	Asia/Magadan	Moscow+08 - Magadan
+#                       there is no Moscow+09 anymore
+
+# MCC=268 Portugal (PT)
+# Has 3 Olson names, but Madeira is using mainland time
+# PT	+3238-01654	Atlantic/Madeira	Madeira Islands
+PT	+3843-00908	Europe/Lisbon	mainland
+PT	+3744-02540	Atlantic/Azores	Azores
+
+# MCC=290, Greenlang (luckily not using Denmark MCC)
+# Four different Olson names, the capital is Nuuk(Godthab)
+GL	+6411-05144	America/Godthab	most locations
+GL	+7646-01840	America/Danmarkshavn	east coast, north of Scoresbysund
+GL	+7029-02158	America/Scoresbysund	Scoresbysund / Ittoqqortoormiit
+GL	+7634-06847	America/Thule	Thule / Pituffik
+
+# MCC=302, Canada (CA) has 25 Olson names.
+# According to wikipedia http://en.wikipedia.org/wiki/Time_in_Canada
+#   there are 6 major zones:
+# 1.1 Pacific Standard Time
+# 1.2 Mountain Standard Time
+# 1.3 Central Standard Time
+# 1.4 Eastern Standard Time
+# 1.5 Atlantic Standard Time
+# 1.6 Newfoundland Standard Time
+# As the capital Ottawa and the largest city Toronto are in the same zone,
+# we'll use it as default:
+CA	+4339-07923	America/Toronto	Eastern Time - Ontario - most locations
+#
+CA	+6404-13925	America/Dawson	Pacific Time - north Yukon
+CA	+5333-11328	America/Edmonton	Mountain Time - Alberta, east British Columbia & west Saskatchewan
+CA	+4953-09709	America/Winnipeg	Central Time - Manitoba & west Ontario
+# skipped Toronto (see above)
+CA	+4439-06336	America/Halifax	Atlantic Time - Nova Scotia (most places), PEI
+CA	+4734-05243	America/St_Johns	Newfoundland Time, including SE Labrador
+
+# MCC=310, United States of America (US)
+# Again 27 Olson names, reading:
+# http://en.wikipedia.org/wiki/Time_in_the_United_States
+#   The six major zones
+# * Eastern standard time zone: (EST; UTC-05; Zone R), which comprises
+# * Central standard time zone: (CST; UTC-06; Zone S), which comprises
+# * Mountain standard time zone: (MST; UTC-07; Zone T), which
+# * Pacific standard time zone: (PST; UTC-08; Zone U), which
+# * Alaska standard time zone: (AKST; UTC-09; Zone V), which
+# * Hawaii-Aleutian standard time zone: (or unofficially Hawaii Standard Time: HST)
+US	+404251-0740023	America/New_York	Eastern Time
+US	+415100-0873900	America/Chicago	Central Time
+US	+394421-1045903	America/Denver	Mountain Time
+US	+340308-1181434	America/Los_Angeles	Pacific Time
+US	+611305-1495401	America/Anchorage	Alaska Time
+US	+211825-1575130	Pacific/Honolulu	Hawaii
+
+# MCC=334, Mexico, (MX) has 8 Olson names, 3 of them are major zones:
+# http://en.wikipedia.org/wiki/Time_in_Mexico
+MX	+1924-09909	America/Mexico_City	Central Time - most locations
+MX	+2838-10605	America/Chihuahua	Mountain Time - Chihuahua
+MX	+3232-11701	America/Tijuana	Pacific Time
+
+# MCC=401, Kazakhstan (KZ), many zones, two major:
+KZ	+4315+07657	Asia/Almaty	most locations
+KZ	+5113+05121	Asia/Oral	West Kazakhstan
+
+# MCC=428, Mongolia (MN). Has 3 Olson names
+# Choibalsan seems to use Ulaanbaatar time
+MN	+4755+10653	Asia/Ulaanbaatar	most locations
+MN	+4801+09139	Asia/Hovd	Bayan-Olgiy, Govi-Altai, Hovd, Uvs, Zavkhan
+
+# MCC=505, Australia (AU) has 12 zones
+# but it seems to be 4 major in winter and 5 in summer.
+# List them East to West:
+AU	-3749+14458	Australia/Melbourne	Victoria
+AU	-3455+13835	Australia/Adelaide	South Australia
+AU	-2728+15302	Australia/Brisbane	Queensland - most locations
+AU	-1228+13050	Australia/Darwin	Northern Territory
+AU	-3157+11551	Australia/Perth	Western Australia - most locations
+
+# MCC=510, Indonesia (ID)
+ID	-0610+10648	Asia/Jakarta	Java & Sumatra
+ID	-0507+11924	Asia/Makassar	east & south Borneo, Celebes, Bali, Nusa Tengarra, west Timor
+ID	-0232+14042	Asia/Jayapura	Irian Jaya & the Moluccas
+
+# MCC=530, New Zeeland, 2 distinct Olson names
+NZ	-3652+17446	Pacific/Auckland	most locations
+NZ	-4357-17633	Pacific/Chatham	Chatham Islands
+
+# MCC=545, Kiribati (KI), 3 distinct Olson names
+KI	+0125+17300	Pacific/Tarawa	Gilbert Islands
+KI	-0308-17105	Pacific/Enderbury	Phoenix Islands
+KI	+0152-15720	Pacific/Kiritimati	Line Islands
+
+# MCC=547, French Pacific (PF), 3 distinct Olson Names
+PF	-1732-14934	Pacific/Tahiti	Society Islands
+PF	-0900-13930	Pacific/Marquesas	Marquesas Islands
+PF	-2308-13457	Pacific/Gambier	Gambier Islands
+
+# MCC=550, Micronesia (FM), 3 distinct Olson Names
+FM	+0725+15147	Pacific/Truk	Truk (Chuuk) and Yap
+FM	+0658+15813	Pacific/Ponape	Ponape (Pohnpei)
+# Kosrae seems to be the zone as Ponape
+# FM	+0519+16259	Pacific/Kosrae	Kosrae
+
+# MCC=722, Argentina (AR), many Olson names, 2 major
+AR	-3436-05827	America/Argentina/Buenos_Aires	Buenos Aires (BA, CF)
+# TODO: unkomment it since 2009 AR	-3319-06621	America/Argentina/San_Luis	San Luis (SL)
+
+# MCC=724, Brazilia (BR), many zones, totaly weird
+# 3 in summer, 3 in winter, but 5 combinations.
+# America/Noronha   Sun Apr 12 18:30:00 FNT 2009     Fir Feb 13 21:30:00 FNT 2009
+#
+# America/Belem   Sun Apr 12 17:30:00 BRT 2009     Fri Feb 13 20:30:00 BRT 2009
+# America/Fortaleza
+# America/Recife
+# America/Araguaina
+# America/Maceio
+# America/Bahia
+# America/Santarem
+#
+# America/Sao_Paulo Sun Apr 12 17:30:00 BRT 2009     Fri Feb 13 21:30:00 BRST 2009
+#
+# America/Campo_Grande  Sun Apr 12 16:30:00 AMT 2009     Fri Feb 13 20:30:00 AMST 2009
+# America/Cuiaba
+#
+# America/Porto_Velho Sun Apr 12 16:30:00 AMT 2009     Fri Feb 13 19:30:00 AMT 2009
+# America/Boa_Vista
+# America/Manaus
+# America/Eirunepe
+# America/Rio_Branco
+BR	-2332-04637	America/Sao_Paulo	S & SE Brazil (GO, DF, MG, ES, RJ, SP, PR, SC, RS)
+BR	-0127-04829	America/Belem	Amapa, E Para
+BR	-0846-06354	America/Porto_Velho	Rondonia
+BR	-0351-03225	America/Noronha	Atlantic islands
+BR	-2027-05437	America/Campo_Grande	Mato Grosso do Sul
+
+# MCC=730, Chilie (CL), 2 distinct Olson names
+CL	-3327-07040	America/Santiago	most locations
+CL	-2709-10926	Pacific/Easter	Easter Island & Sala y Gomez
+
+# MCC=740, Ecuador (EC), 2 distinct Olson names
+EC	-0210-07950	America/Guayaquil	mainland
+EC	-0054-08936	Pacific/Galapagos	Galapagos Islands
