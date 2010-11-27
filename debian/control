@@ -1,0 +1,23 @@
+Source: tzdata
+Section: misc
+Priority: optional
+Maintainer: Ilya Dogolazky <ilya.dogolazky@nokia.com>
+Build-Depends: debhelper (>= 7),
+ python (>= 2.5),
+ bash,
+ pcregrep
+Standards-Version: 3.8.0
+
+Package: tzdata
+Conflicts: timed (<< 2.28)
+Architecture: any
+Depends: ${misc:Depends}
+Description: Olson database of time zone data
+ Time zone descriptions for all known Olson zones
+
+Package: tzdata-timed
+Architecture: all
+Depends: ${misc:Depends}, tzdata (= ${binary:Version})
+Description: time zone data needed for time daemon
+ Time zone related data pre-formatted to be used by time daemon and other
+ applications
