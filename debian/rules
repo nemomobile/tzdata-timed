@@ -71,7 +71,7 @@ install-stamp:
 	mkdir -p $(DEST)/usr/share/{zoneinfo,tzdata-timed}
 	cd $(BUILD_DIR) && install -t $(DEST)/usr/share/zoneinfo -o 0 -g 0 -m 644 zone.tab iso3166.tab
 	cd $(BUILD_DIR) && cp -a zones/* $(DEST)/usr/share/zoneinfo
-	cp -a $(TIMED_DIR)/* $(DEST)/usr/share/tzdata-timed
+	cp -a $(BUILD_DIR)/zone.alias $(TIMED_DIR)/* $(DEST)/usr/share/tzdata-timed
 	cd $(BUILD_DIR) && chown -R 0:0 $(DEST)/usr/share/{zoneinfo,tzdata-timed}
 	cd $(BUILD_DIR) && chmod -R u+rwX,go+rX,go-w $(DEST)/usr/share/{zoneinfo,tzdata-timed}
 	touch $@
