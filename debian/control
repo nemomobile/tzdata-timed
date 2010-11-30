@@ -21,3 +21,9 @@ Depends: ${misc:Depends}, tzdata (= ${binary:Version})
 Description: time zone data needed for time daemon
  Time zone related data pre-formatted to be used by time daemon and other
  applications
+
+Package: tzdata-calendar
+Architecture: all
+Depends: ${misc:Depends}, tzdata (= ${binary:Version})
+Description: time zone data needed for calendar application
+ The full list of all supported time zones and aliases.

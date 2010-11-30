@@ -47,6 +47,7 @@ build-stamp: configure
 	cd $(BUILD_DIR) && $(SCRIPTS_DIR)/zone-generate.sh
 	cd $(BUILD_DIR) && perl -w -s $(SCRIPTS_DIR)/find-aliases.perl \
     -zones=zone.list -signatures=signatures -md5sum=md5sum > zone.alias
+	cd $(BUILD_DIR) && for name in `cat zone.alias` ; do echo '??' +0+0 $$name ; done > zone-and-aliases.tab
 	cd $(DATA_DIR) && $(SCRIPTS_DIR)/prepare-timed-data.perl \
     --zonetab=$(BUILD_DIR)/zone.tab \
     --signatures=$(BUILD_DIR)/signatures \
@@ -68,12 +69,13 @@ install-stamp:
 	dh_testroot
 	dh_clean -k
 	dh_installdirs
-	mkdir -p $(DEST)/usr/share/{zoneinfo,tzdata-timed}
+	mkdir -p $(DEST)/usr/share/{zoneinfo,tzdata-timed,tzdata-calendar}
 	cd $(BUILD_DIR) && install -t $(DEST)/usr/share/zoneinfo -o 0 -g 0 -m 644 zone.tab iso3166.tab
 	cd $(BUILD_DIR) && cp -a zones/* $(DEST)/usr/share/zoneinfo
 	cp -a $(BUILD_DIR)/zone.alias $(TIMED_DIR)/* $(DEST)/usr/share/tzdata-timed
-	cd $(BUILD_DIR) && chown -R 0:0 $(DEST)/usr/share/{zoneinfo,tzdata-timed}
-	cd $(BUILD_DIR) && chmod -R u+rwX,go+rX,go-w $(DEST)/usr/share/{zoneinfo,tzdata-timed}
+	cp -a $(BUILD_DIR)/zone-and-aliases.tab $(DEST)/usr/share/tzdata-calendar
+	cd $(BUILD_DIR) && chown -R 0:0 $(DEST)/usr/share/{zoneinfo,tzdata-timed,tzdata-calendar}
+	cd $(BUILD_DIR) && chmod -R u+rwX,go+rX,go-w $(DEST)/usr/share/{zoneinfo,tzdata-timed,tzdata-calendar}
 	touch $@
 
 binary: binary-indep binary-arch
