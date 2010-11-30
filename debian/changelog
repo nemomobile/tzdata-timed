@@ -1,3 +1,9 @@
+tzdata (2008h.meego4) unstable; urgency=low
+
+  * zone list for calendar
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 30 Nov 2010 16:05:03 +0200
+
 tzdata (2008h.meego3) unstable; urgency=low
 
   * new packaging of the old data
