@@ -53,6 +53,11 @@ foreach my $z (keys %$md5)
   push @{$known->{$res}}, $z ;
 }
 
+my $zulu = "Iso8601/+0000" ;
+die "can't find Zulu zone $zulu" unless exists $known->{$zulu} ;
+
+push @{$known->{$zulu}}, "UTC", "GMT", "UCT" ;
+
 for my $z (sort keys %$known)
 {
   my $str = $z ;
