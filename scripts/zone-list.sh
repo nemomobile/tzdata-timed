@@ -27,9 +27,11 @@ cat stderr | grep -v "time zone abbreviation differs from POSIX standard" >&2 ||
   for f in $(cd $output ; echo *) ; do
     if test -d $output/$f ; then
       ( cd $output && find $f -type f )
+    elif test -f $output/$f ; then
+      echo $f
     fi
   done
 
-  ( cat zone.tab | pcregrep -v '^\s*#' | awk '{print $3}' )
+#  ( cat zone.tab | pcregrep -v '^\s*#' | awk '{print $3}' )
 
 } | sort | uniq

@@ -46,7 +46,7 @@ build-stamp: configure
 	cd $(BUILD_DIR) && $(SCRIPTS_DIR)/zone-list.sh > zone.list
 	cd $(BUILD_DIR) && $(SCRIPTS_DIR)/zone-generate.sh
 	cd $(BUILD_DIR) && perl -w -s $(SCRIPTS_DIR)/find-aliases.perl \
-    -zones=zone.list -signatures=signatures -md5sum=md5sum > zone.alias
+    -zones=zone.list -signatures=signatures -md5sum=md5sum -links=zone.link -zonetab=zone.tab > zone.alias
 	cd $(BUILD_DIR) && for name in `cat zone.alias` ; do echo '??' +0+0 $$name ; done > zone-and-aliases.tab
 	cd $(DATA_DIR) && $(SCRIPTS_DIR)/prepare-timed-data.perl \
     --zonetab=$(BUILD_DIR)/zone.tab \

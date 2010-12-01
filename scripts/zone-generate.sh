@@ -12,6 +12,7 @@ leapseconds=leapseconds
 output=zones
 signatures=signatures
 md5sum=md5sum
+links=zone.link
 
 test -x $zic
 test -x $yearistype
@@ -48,5 +49,5 @@ zones=$(
 
 ( cd $output && md5sum $zones ) > $md5sum
 $signature `pwd`/$output $zones > $signatures
-
+cat $input | pcregrep '^\s*Link\s+' > $links
 
