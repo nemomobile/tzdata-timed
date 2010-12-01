@@ -1,3 +1,9 @@
+tzdata (2008h.meego5) unstable; urgency=low
+
+  * creating zone list in a more careful way
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Wed, 01 Dec 2010 19:57:07 +0200
+
 tzdata (2008h.meego4) unstable; urgency=low
 
   * zone list for calendar
