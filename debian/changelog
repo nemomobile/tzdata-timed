@@ -1,3 +1,9 @@
+tzdata (2008h.meego6) unstable; urgency=low
+
+  * scripts improved
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Mon, 07 Feb 2011 21:52:29 +0200
+
 tzdata (2008h.meego5) unstable; urgency=low
 
   * creating zone list in a more careful way
