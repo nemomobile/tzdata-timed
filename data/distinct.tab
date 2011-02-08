@@ -136,8 +136,10 @@ PF	-0900-13930	Pacific/Marquesas	Marquesas Islands
 PF	-2308-13457	Pacific/Gambier	Gambier Islands
 
 # MCC=550, Micronesia (FM), 3 distinct Olson Names
-FM	+0725+15147	Pacific/Truk	Truk (Chuuk) and Yap
-FM	+0658+15813	Pacific/Ponape	Ponape (Pohnpei)
+# "Ponape" and "Truk" are names from 2008-h
+# "Pohnpei" and "Chuuk" nowadays (2011-b)
+FM	+0725+15147	Pacific/Chuuk	Truk (Chuuk) and Yap
+FM	+0658+15813	Pacific/Pohnpei	Ponape (Pohnpei)
 # Kosrae seems to be the zone as Ponape
 # FM	+0519+16259	Pacific/Kosrae	Kosrae
 
