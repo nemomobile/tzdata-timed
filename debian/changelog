@@ -1,8 +1,9 @@
 tzdata (2011b.meego1) unstable; urgency=low
 
-  * new olson data
+  * new olson data and code 2011-b
+  * minor changes related to Micronesia renamed zones
 
- -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Mon, 07 Feb 2011 21:56:49 +0200
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 17 Feb 2011 14:20:00 +0200
 
 tzdata (2008h.meego6) unstable; urgency=low
 
