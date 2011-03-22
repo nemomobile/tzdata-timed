@@ -1,13 +1,13 @@
 tzdata (2011d.meego1) unstable; urgency=low
 
   * new olson data and code, 2011-d
+  * Fixes: NB#236344 - new Olson data
 
  -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 15 Mar 2011 10:33:37 +0200
 
 tzdata (2011c.meego2) unstable; urgency=low
 
   * new olson data and code, 2011-c
-  * Fixes: NB#236344 - new Olson data
 
  -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Mon, 14 Mar 2011 15:31:18 +0200
 
