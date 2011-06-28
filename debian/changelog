@@ -3,8 +3,9 @@ tzdata (2011h.meego1) unstable; urgency=low
   * new olson data, 2011-h
   * new MCC list from wikipedia
   * two more MCC codes
+  * zoneinfo files packaged for libicu
 
- -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 28 Jun 2011 09:18:52 +0300
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 28 Jun 2011 09:20:24 +0300
 
 tzdata (2011g.meego1) unstable; urgency=low
 

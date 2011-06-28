@@ -5,6 +5,7 @@ Maintainer: Ilya Dogolazky <ilya.dogolazky@nokia.com>
 Build-Depends: debhelper (>= 7),
  python (>= 2.5),
  bash,
+ libicu-dev,
  pcregrep
 Standards-Version: 3.8.0
 
@@ -27,3 +28,9 @@ Architecture: all
 Depends: ${misc:Depends}, tzdata (= ${binary:Version})
 Description: time zone data needed for calendar application
  The full list of all supported time zones and aliases.
+
+Package: tzdata-libicu
+Architecture: all
+Depends: ${misc:Depends}, tzdata (= ${binary:Version})
+Description: time zone data needed for libicu library
+ The Olson database in the data format suitable for libicu

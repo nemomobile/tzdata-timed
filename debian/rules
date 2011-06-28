@@ -33,6 +33,8 @@ configure-stamp:
 	mkdir -p $(BUILD_DIR) $(BINARY_DIR) $(TIMED_DIR)
 	cd $(BUILD_DIR) && tar xzf $(TAR_DIR)/tzdata$(TZDATA_VERSION).tar.gz
 	cd $(BUILD_DIR) && tar xzf $(TAR_DIR)/tzcode$(TZCODE_VERSION).tar.gz
+	echo $(TZDATA_VERSION) > $(BUILD_DIR)/tzdata_version
+	echo $(TZCODE_VERSION) > $(BUILD_DIR)/tzcode_version
 	touch $@
 
 build: build-stamp
@@ -70,13 +72,14 @@ install-stamp:
 	dh_testroot
 	dh_clean -k
 	dh_installdirs
-	mkdir -p $(DEST)/usr/share/{zoneinfo,tzdata-timed,tzdata-calendar}
+	mkdir -p $(DEST)/usr/share/{zoneinfo,tzdata-timed,tzdata-calendar,tzdata-libicu}
 	cd $(BUILD_DIR) && install -t $(DEST)/usr/share/zoneinfo -o 0 -g 0 -m 644 zone.tab iso3166.tab
 	cd $(BUILD_DIR) && cp -a zones/* $(DEST)/usr/share/zoneinfo
 	cp -a $(BUILD_DIR)/zone.alias $(TIMED_DIR)/* $(DEST)/usr/share/tzdata-timed
 	cp -a $(BUILD_DIR)/zone-and-aliases.tab $(DEST)/usr/share/tzdata-calendar
-	cd $(BUILD_DIR) && chown -R 0:0 $(DEST)/usr/share/{zoneinfo,tzdata-timed,tzdata-calendar}
-	cd $(BUILD_DIR) && chmod -R u+rwX,go+rX,go-w $(DEST)/usr/share/{zoneinfo,tzdata-timed,tzdata-calendar}
+	cp -a $(BUILD_DIR)/zoneinfo64.res $(DEST)/usr/share/tzdata-libicu
+	cd $(BUILD_DIR) && chown -R 0:0 $(DEST)/usr/share/{zoneinfo,tzdata-timed,tzdata-calendar,tzdata-libicu}
+	cd $(BUILD_DIR) && chmod -R u+rwX,go+rX,go-w $(DEST)/usr/share/{zoneinfo,tzdata-timed,tzdata-calendar,tzdata-libicu}
 	touch $@
 
 binary: binary-indep binary-arch
