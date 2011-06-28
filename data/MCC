@@ -14,6 +14,8 @@
 # History:
 # 2010-06-03. Initial version created by copying and sorting 233 codes
 #             from Wikipedia artile 'List of mobile country codes'
+#
+# 2011-06-28. Added 406 (India) and 461 (PRC)
 
 202
 204
@@ -106,6 +108,7 @@
 402
 404
 405
+406
 410
 412
 413
@@ -141,6 +144,7 @@
 456
 457
 460
+461
 466
 467
 470
