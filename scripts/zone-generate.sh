@@ -46,6 +46,7 @@ $zic -d $output -p America/New_York
 
 echo "Processing all zones again (for libicu)"
 $icu_zic -y $yearistype -d $icu_output -L /dev/null $input $icu_input 2> stderr
+$icu_zic -d $icu_output -p America/New_York
 cat stderr | grep -v "time zone abbreviation differs from POSIX standard" >&2 || true
 echo -n "Olson data version:" && cat tzdata_version
 $icu_tz2icu $icu_output ./zone.tab $(cat tzdata_version)

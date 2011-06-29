@@ -1,3 +1,9 @@
+tzdata (2011h.meego2) unstable; urgency=low
+
+  * posixrules for libicu
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Wed, 29 Jun 2011 09:20:11 +0300
+
 tzdata (2011h.meego1) unstable; urgency=low
 
   * new olson data, 2011-h
