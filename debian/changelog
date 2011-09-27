@@ -1,8 +1,9 @@
 tzdata (2011k.meego1) unstable; urgency=low
 
   * new tzcode package (2011i)
+  * new tzdata package (2011k)
 
- -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 27 Sep 2011 12:40:41 +0300
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 27 Sep 2011 12:45:07 +0300
 
 tzdata (2011h.meego3) unstable; urgency=low
 
