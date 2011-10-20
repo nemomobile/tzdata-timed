@@ -12,7 +12,6 @@ tzdata (2011k.meego1) unstable; urgency=low
 
   * new tzcode package (2011i)
   * new tzdata package (2011k)
-  * Fixes: NB#236344 - new Olson data
 
  -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 27 Sep 2011 12:45:07 +0300
 
