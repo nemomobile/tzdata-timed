@@ -1,8 +1,9 @@
 tzdata (2011k.meego2) unstable; urgency=low
 
-  *  new tzdata package (2011l)
+  * new tzdata package (2011l)
+  * maintainer name update 
 
- -- Victor Portnov <victor.portnov@teleca.com>  Thu, 20 Oct 2011 12:38:49 +0400
+ -- Victor Portnov <victor.portnov@teleca.com>  Thu, 20 Oct 2011 13:00:03 +0400
 
 tzdata (2011k.meego1) unstable; urgency=low
 
