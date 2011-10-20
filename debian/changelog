@@ -4,8 +4,9 @@ tzdata (2011l.meego1) unstable; urgency=low
   * maintainer name update 
   * new MCC list from wikipedia (2011-09-19)
   * Palestine MCC is corrected to 425 
+  * Fixes: NB#236344 - new Olson data
 
- -- Victor Portnov <victor.portnov@teleca.com>  Thu, 20 Oct 2011 13:12:30 +0400
+ -- Victor Portnov <victor.portnov@teleca.com>  Thu, 20 Oct 2011 15:42:48 +0400
 
 tzdata (2011k.meego1) unstable; urgency=low
 
