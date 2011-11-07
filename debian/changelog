@@ -1,10 +1,16 @@
+tzdata (2011n.meego1) unstable; urgency=low
+
+  * new tzdata package (2011n)
+  * Fixes: NB#236344 - new Olson data
+
+ -- Victor Portnov <victor.portnov@teleca.com>  Mon, 07 Nov 2011 12:25:56 +0300
+
 tzdata (2011l.meego1) unstable; urgency=low
 
   * new tzdata package (2011l)
   * maintainer name update 
   * new MCC list from wikipedia (2011-09-19)
   * Palestine MCC is corrected to 425 
-  * Fixes: NB#236344 - new Olson data
 
  -- Victor Portnov <victor.portnov@teleca.com>  Thu, 20 Oct 2011 15:42:48 +0400
 
