@@ -1,3 +1,11 @@
+tzdata (2012b.meego1) unstable; urgency=low
+
+  * new tzdata package (2012b)
+  * new tzcode package (2012b)
+  * Fixes: NB#299140 - new Olson data
+
+ -- Victor Portnov <victor.portnov@teleca.com>  Mon, 05 Mar 2012 18:05:42 +0400
+
 tzdata (2011n.meego1) unstable; urgency=low
 
   * new tzdata package (2011n)
