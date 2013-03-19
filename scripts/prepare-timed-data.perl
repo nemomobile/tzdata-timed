@@ -18,10 +18,6 @@ sub main
   #                   mnc=>mobile network code, comment=>human readable country name}
   my ($MCC, $wiki) = read_mcc_list_by_parameter("mcc-main", "mcc-skip-patterns");
 
-  # 1. Find all the wiki page on the command line and take the latest one
-  #    Returned data: $wiki->{$mcc} = { mcc=>$1, xy=>$2, comment=>$3 } ;
-  #my $wiki = read_wiki() ;
-
   # 2. Find and open zone.tab file on the command line: --olson=.......
   #    Returned data:
   #      *) { xy=>[ {tz=>"olson/zone", comment=>"comment"}, ... ] }
@@ -114,31 +110,6 @@ sub read_mcc_list_by_parameter
   }
   print " Read ", scalar keys %$list, " codes\n" ;
   return ($list, $wiki) ;
-}
-
-# 1
-sub read_wiki
-{
-  my $re = qr/^mcc-wikipedia-\d{4}-\d{2}-\d{2}(-*)?\.html$/ ;
-  my @wiki_list = sort grep { /$re/ } @ARGV ;
-  die "not a single wikipage given on command line" unless @wiki_list ;
-  my $wiki_file = $wiki_list[-1] ;
-  @ARGV = grep { ! /$re/ } @ARGV ;
-  print "Using wikipedia file $wiki_file\n" ;
-  open WIKI, "<", "$wiki_file" or die "$wiki_file: @!" ;
-  my $wiki = { } ;
-  while(<WIKI>)
-  {
-    chomp ;
-    #| 412 || AF || [[Afghanistan]]
-    next unless /^\|\s+(\d{3})\s+\|\|\s+([A-Z]{2})\s+\|\|\s*(.*)$/ ;
-    my ($mcc, $xy, $comment) = ($1,$2,$3) ;
-    print STDERR "Warning: duplicate mcc=$mcc (country=$xy) ignored\n" and next if exists $wiki->{$mcc} ;
-    $wiki->{$mcc} = { mcc=>$1, xy=>$2, comment=>$3 } ;
-  }
-  my $size = scalar keys %$wiki ;
-  print "$size mappings mcc=>country in the wiki file\n" ;
-  return $wiki ;
 }
 
 # 2
