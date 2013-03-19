@@ -21,3 +21,6 @@ MY	+0310+10142	Asia/Kuala_Lumpur	peninsular Malaysia
 
 # MCC=551, Marshall Islands (MH)
 MH	+0709+17112	Pacific/Majuro	most locations
+
+# MCC=262, Germany (DE)
+DE	+5230+01322	Europe/Berlin	most locations
