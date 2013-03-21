@@ -10,12 +10,13 @@ main() ;
 
 sub main
 {
-  # 0. Read the mcc list from file given in --mcc-main=.....
-  my $MCC = read_mcc_list_by_parameter("mcc-main") ;
-
-  # 1. Find all the wiki page on the command line and take the latest one
-  #    Returned data: $wiki->{$mcc} = { mcc=>$1, xy=>$2, comment=>$3 } ;
-  my $wiki = read_wiki() ;
+  # 0. Read the mcc list from file given in --mcc-main=...,
+  #    filter out all entries that match the regexp patterns
+  #    in file --mcc-skip-patterns=...
+  #    Returned data: $MCC->{mcc1=>undef, mcc2=>undef, ...}
+  #                   $wiki->{MCC} = {xy=>ISO 3166-1 alpha-2 country code,
+  #                   mnc=>mobile network code, comment=>human readable country name}
+  my ($MCC, $wiki) = read_mcc_list_by_parameter("mcc-main", "mcc-skip-patterns");
 
   # 2. Find and open zone.tab file on the command line: --olson=.......
   #    Returned data:
@@ -57,49 +58,58 @@ sub main
   exit 0 ;
 }
 
+# Combine lines of the file defined by the
+# first argument into a string "line1|line2|...|linen".
+sub read_unsupported_mcc_patterns
+{
+  my $file = shift;
+  print "Reading patterns for stripping unsupported zones from $file\n";
+  open FILE, "<", $file or die "can't read '$file': $!";
+  my $patterns = "";
+  while (<FILE>) {
+      chomp;
+      next if /^\s*($|#)/;
+      if (length($patterns) > 0) {
+	  $patterns = $patterns . "|";
+      }
+      $patterns = $patterns . $_;
+  }
+  return ($patterns);
+}
+
 # 0
 sub read_mcc_list_by_parameter
 {
   my $flag = shift ;
   my $file = extract_single_parameter($flag) ;
-  print "Reading mcc codes from $file... " ;
-  open FILE, "<", $file or die "can't read '$file': $!" ;
+  print "Reading mcc codes from $file\n" ;
+
+  my $patternflag = shift;
+  my $patternfile = extract_single_parameter($patternflag);
+  my $patterns = read_unsupported_mcc_patterns($patternfile);
+
   my $list = { } ;
+  my $wiki = { };
+  open FILE, "<", $file or die "can't read '$file': $!" ;
   while(<FILE>)
   {
     chomp ;
     next if /^\s*($|#)/ ;
-    die "mcc file '$file' is corrupted" unless /^\d{3}$/ ;
-    die "mcc file '$file' contains duplicate value $_" if exists $list->{$_} ;
-    $list->{$_} = undef ;
+    if ($_ =~ /$patterns/) {
+	print " Skipping unsupported zone: $_\n";
+	next;
+    }
+    die "mcc file '$file' is corrupted: $_" unless /^\d{3}\s\d*\s[A-Z]{2}\s[A-Z]*/;
+    my @values = split(" ", $_, 4);
+    die "mcc file '$file' is corrupted", unless scalar(@values) == 4;
+    if (exists $wiki->{$values[0]}) {
+	die "mcc file '$file' contains duplicate value $_", unless $wiki->{$values[0]}->{mnc} != $values[1];
+    }
+    $wiki->{$values[0]} = { xy=>$values[2], mnc=>$values[1], comment=>$values[3] };
+    $list->{$values[0]} = undef ;
   }
-  print scalar keys %$list, " codes\n" ;
-  return $list ;
-}
-
-# 1
-sub read_wiki
-{
-  my $re = qr/^mcc-wikipedia-\d{4}-\d{2}-\d{2}(-*)?\.html$/ ;
-  my @wiki_list = sort grep { /$re/ } @ARGV ;
-  die "not a single wikipage given on command line" unless @wiki_list ;
-  my $wiki_file = $wiki_list[-1] ;
-  @ARGV = grep { ! /$re/ } @ARGV ;
-  print "Using wikipedia file $wiki_file\n" ;
-  open WIKI, "<", "$wiki_file" or die "$wiki_file: @!" ;
-  my $wiki = { } ;
-  while(<WIKI>)
-  {
-    chomp ;
-    #| 412 || AF || [[Afghanistan]]
-    next unless /^\|\s+(\d{3})\s+\|\|\s+([A-Z]{2})\s+\|\|\s*(.*)$/ ;
-    my ($mcc, $xy, $comment) = ($1,$2,$3) ;
-    print STDERR "Warning: duplicate mcc=$mcc (country=$xy) ignored\n" and next if exists $wiki->{$mcc} ;
-    $wiki->{$mcc} = { mcc=>$1, xy=>$2, comment=>$3 } ;
-  }
-  my $size = scalar keys %$wiki ;
-  print "$size mappings mcc=>country in the wiki file\n" ;
-  return $wiki ;
+  print " Read ", scalar keys %$list, " codes\n" ;
+  return ($list, $wiki) ;
 }
 
 # 2

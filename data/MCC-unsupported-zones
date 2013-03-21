@@ -1,0 +1,67 @@
+# This file contains grep patterns that are used to remove unsupported
+# entries from the list of MCCs. Most of these are removed because timed
+# uses only MCC to identify the current location of the device. Some
+# operators operate across multiple time zones/countries/administrative
+# areas with the same MCC. Timed is unable to deal with these cases, it
+# expects that a MCC indentifies a single location expressed as an ISO
+# 3166-1 alpha-2 code. This could at least partly fixed by making timed
+# identify locations based on both MCC and MNC.
+
+# Networks operating in Guam (GU) uses the MCCs 310 & 311 of US.
+# Remove such lines. Setting time based on the MCC 310/311 will not
+# work in GU, unless timed is able to use the MNCs of the operators:
+# 032, 033, 140, 370 for MCC 310, and 250 for MCC 311.
+^31..*GU
+
+# Bermuda (BM) has some networks that use the MCC 310 of US, remove
+# lines with US MCC and BM. Setting time based on MCC 310 only will
+# not work in BM, timed needs support for MNCs to be able to separate
+# the operator with MNC 59 and MCC 310 as operating in BM.
+^310.*BM
+
+# Kosovo is mentioned with the non-standard country code RKS,
+# which does not exist in zone.tab, making it useless for timed
+# Networks operating in RKS use country codes from Slovenia (SI) 293,
+# and Monaco (MC). RKS, SI, and MC are on the same time zone
+# CET (UTC+1)/CEST (UTC+2), so setting time based on SI or MC should
+# work.
+RKS
+
+# Remove networks Isle of Man (IM), Jersey (JE), Guernsey (GG) using
+# the MCC 234 of Britain (GB). IM, JE, GG, and GB share the time zone
+# GMT/UTC+1, so setting the time based on MCC 234 will work in IM, JE,
+# and GG. Using MNCs will not make timed able to find out the location
+# of the device as some operators operating in GB, JE, GG share both
+# MCC and MNC.
+^234.*IM
+^234.*JE
+^234.*Guernsey
+
+# Some networks use Jamaican (JM) country code 338 but operate in Bermuda (BM) or
+# Turks and Caicos (TC), which have different time zones. Setting time based on
+# 338 will not work in TC or BM, unfortunately the MNC does not help as it is
+# the same in all locations 050, making JM operator codes unusable for timed.
+^338.*BM
+^338.*TC
+
+# Networks operating in Guadeloupe (GP) and Martinique (MQ) share the MCC 340,
+# remove MQ from the MCC list. GP and MQ both use ECT (UTC-04), so setting time 
+# based on GP should work when in MQ
+MQ
+
+# Operators providing service in the State of Palestine (PS) shares the
+# MCC with Israel 425 (IL). Remove PS, setting time based on MCC 425 will
+# work, but getting the location right will need timed to be able to detect
+#the MNCs 05 and 06.
+^425.*PS
+
+# The Australian (AU) MCC 505 is used by Operators operting in Norfolk Island (NF),
+# and Australian main land, making it impossible for timed detect NF as a location
+# regardless of MNC support. So setting time in NF will not work.
+^505.*NF
+
+# The Netherlands Antilles was an autonomous country that has been dissolved,
+# The country code AN does not exist in zone.tab anymore, making the location
+# unusable by timed. There's no easy mapping between the contry code 362 and
+# the locations formerly included in Netherlands Antilles.
+^362.*AN
