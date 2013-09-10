@@ -9,7 +9,8 @@
 #
 # The main source for this list is the Wikipedia article on mobile
 # country codes: http://en.wikipedia.org/wiki/Mobile_country_code
-# Updated from Wikipedia on March 16, 2013.
+# Updated from Wikipedia on August 08, 2013 with the help of
+# scripts/create-mcc-country-mappings.sh
 
 202 01 GR Greece
 202 05 GR Greece
@@ -60,10 +61,12 @@
 208 13 FR France
 208 14 FR France
 208 15 FR France
+208 16 FR France
 208 20 FR France
 208 21 FR France
 208 22 FR France
 208 23 FR France
+208 25 FR France
 208 26 FR France
 208 88 FR France
 212 01 MC Monaco
@@ -115,6 +118,7 @@
 222 98 IT Italy
 222 99 IT Italy
 226 01 RO Romania
+226 02 RO Romania
 226 03 RO Romania
 226 04 RO Romania
 226 05 RO Romania
@@ -152,13 +156,13 @@
 232 02 AT  Austria
 232 03 AT  Austria
 232 05 AT  Austria
-232 06 AT  Austria
 232 07 AT  Austria
 232 08 AT  Austria
 232 09 AT  Austria
 232 10 AT  Austria
 232 11 AT  Austria
 232 12 AT  Austria
+232 13 AT  Austria
 232 14 AT  Austria
 232 15 AT  Austria
 232 16 AT  Austria
@@ -166,8 +170,8 @@
 234 00 GB United Kingdom
 234 01 GB United Kingdom
 234 02 GB United Kingdom
-234 03 GB Guernsey (United Kingdom)
 234 03 GB United Kingdom
+234 03 GG Guernsey (United Kingdom)
 234 03 JE Jersey (United Kingdom)
 234 04 GB United Kingdom
 234 05 GB United Kingdom
@@ -190,6 +194,7 @@
 234 22 GB United Kingdom
 234 24 GB United Kingdom
 234 25 GB United Kingdom
+234 27 GB United Kingdom
 234 30 GB United Kingdom
 234 31 GB United Kingdom
 234 32 GB United Kingdom
@@ -198,12 +203,12 @@
 234 35 GB United Kingdom
 234 36 GB United Kingdom
 234 37 GB United Kingdom
-234 50 GB Guernsey (United Kingdom)
 234 50 GB United Kingdom
+234 50 GG Guernsey (United Kingdom)
 234 50 JE Jersey (United Kingdom)
 234 51 GB United Kingdom
-234 55 GB Guernsey (United Kingdom)
 234 55 GB United Kingdom
+234 55 GG Guernsey (United Kingdom)
 234 55 JE Jersey (United Kingdom)
 234 58 GB United Kingdom
 234 58 IM Isle of Man (United Kingdom)
@@ -399,7 +404,9 @@
 266 09 GI Gibraltar (United Kingdom)
 268 01 PT Portugal
 268 03 PT Portugal
+268 04 PT Portugal
 268 06 PT Portugal
+268 07 PT Portugal
 268 21 PT Portugal
 270 01 LU Luxembourg
 270 77 LU Luxembourg
@@ -462,8 +469,8 @@
 294 03 MK Republic of Macedonia|Macedonia
 295 01 LI Liechtenstein
 295 02 LI Liechtenstein
-295 04 LI Liechtenstein
 295 05 LI Liechtenstein
+295 06 LI Liechtenstein
 295 77 LI Liechtenstein
 297 01 ME Montenegro
 297 02 ME Montenegro
@@ -501,6 +508,7 @@
 302 780 CA Canada
 302 880 CA Canada
 308 01 PM Saint Pierre and Miquelon (France)
+308 02 PM Saint Pierre and Miquelon (France)
 310 004 US United States of America
 310 005 US United States of America
 310 010 US United States of America
@@ -584,6 +592,7 @@
 310 690 US United States of America
 310 730 US United States of America
 310 740 US United States of America
+310 750 US United States of America
 310 760 US United States of America
 310 770 US United States of America
 310 780 US United States of America
@@ -631,11 +640,13 @@
 311 480 US United States of America
 311 481 US United States of America
 311 660 US United States of America
+311 960 US United States of America
 311 970 US United States of America
 313 100 US United States of America
 313 101 US United States of America
 316 010 US United States of America
 316 011 US United States of America
+330 00 PR Puerto Rico
 330 110 PR Puerto Rico
 330 120 PR Puerto Rico
 334 010 MX Mexico
@@ -687,7 +698,7 @@
 362 94 AN Netherlands Antilles (Kingdom of the Netherlands)
 362 95 AN Netherlands Antilles (Kingdom of the Netherlands)
 363 01 AW Aruba (Kingdom of the Netherlands)
-363 020 AW Aruba (Kingdom of the Netherlands)
+363 02 AW Aruba (Kingdom of the Netherlands)
 364 39 BS Bahamas
 365 010 AI Anguilla (United Kingdom)
 365 840 AI Anguilla (United Kingdom)
@@ -732,6 +743,7 @@
 404 15 IN India
 404 16 IN India
 404 17 IN India
+404 18 IN India
 404 19 IN India
 404 20 IN India
 404 21 IN India
@@ -750,11 +762,13 @@
 404 40 IN India
 404 41 IN India
 404 42 IN India
+404 43 IN India
 404 44 IN India
 404 45 IN India
 404 46 IN India
 404 48 IN India
 404 49 IN India
+404 50 IN India
 404 51 IN India
 404 52 IN India
 404 53 IN India
@@ -776,8 +790,11 @@
 404 72 IN India
 404 73 IN India
 404 74 IN India
+404 75 IN India
+404 76 IN India
 404 77 IN India
 404 78 IN India
+404 79 IN India
 404 80 IN India
 404 81 IN India
 404 82 IN India
@@ -801,6 +818,7 @@
 405 025 IN India
 405 026 IN India
 405 027 IN India
+405 028 IN India
 405 029 IN India
 405 030 IN India
 405 031 IN India
@@ -823,11 +841,25 @@
 405 04 IN India
 405 05 IN India
 405 06 IN India
+405 07 IN India
+405 08 IN India
 405 09 IN India
 405 10 IN India
+405 11 IN India
+405 12 IN India
 405 13 IN India
+405 14 IN India
+405 15 IN India
+405 17 IN India
+405 18 IN India
+405 19 IN India
+405 20 IN India
+405 21 IN India
+405 22 IN India
+405 23 IN India
 405 51 IN India
 405 52 IN India
+405 53 IN India
 405 54 IN India
 405 55 IN India
 405 56 IN India
@@ -865,14 +897,41 @@
 405 844 IN India
 405 845 IN India
 405 846 IN India
+405 847 IN India
 405 848 IN India
+405 849 IN India
 405 850 IN India
+405 851 IN India
+405 852 IN India
+405 853 IN India
+405 854 IN India
 405 855 IN India
+405 856 IN India
+405 857 IN India
+405 858 IN India
+405 859 IN India
+405 860 IN India
+405 861 IN India
+405 862 IN India
+405 863 IN India
 405 864 IN India
 405 865 IN India
+405 866 IN India
+405 867 IN India
+405 868 IN India
+405 869 IN India
+405 870 IN India
+405 871 IN India
+405 872 IN India
+405 873 IN India
+405 874 IN India
 405 875 IN India
 405 880 IN India
 405 881 IN India
+405 908 IN India
+405 909 IN India
+405 910 IN India
+405 911 IN India
 405 912 IN India
 405 913 IN India
 405 914 IN India
@@ -917,6 +976,7 @@
 420 01 SA Saudi Arabia
 420 03 SA Saudi Arabia
 420 04 SA Saudi Arabia
+420 21 SA Saudi Arabia
 421 01 YE Yemen
 421 02 YE Yemen
 421 03 YE Yemen
@@ -928,13 +988,14 @@
 425 01 IL Israel
 425 02 IL Israel
 425 03 IL Israel
-425 05 PS Palestinian Authority
-425 06 PS Palestinian Authority
+425 05 PS State of Palestine
+425 06 PS State of Palestine
 425 07 IL Israel
 425 08 IL Israel
 425 14 IL Israel
 425 15 IL Israel
 425 16 IL Israel
+425 18 IL Israel
 426 01 BH Bahrain
 426 02 BH Bahrain
 426 04 BH Bahrain
@@ -1087,27 +1148,28 @@
 452 06 VN Vietnam
 452 07 VN Vietnam
 452 08 VN Vietnam
-454 00 HK Hong Kong (Special Administrative Region of People's Republic of China)
-454 01 HK Hong Kong (Special Administrative Region of People's Republic of China)
-454 02 HK Hong Kong (Special Administrative Region of People's Republic of China)
-454 03 HK Hong Kong (Special Administrative Region of People's Republic of China)
-454 04 HK Hong Kong (Special Administrative Region of People's Republic of China)
-454 05 HK Hong Kong (Special Administrative Region of People's Republic of China)
-454 06 HK Hong Kong (Special Administrative Region of People's Republic of China)
-454 07 HK Hong Kong (Special Administrative Region of People's Republic of China)
-454 08 HK Hong Kong (Special Administrative Region of People's Republic of China)
-454 09 HK Hong Kong (Special Administrative Region of People's Republic of China)
-454 10 HK Hong Kong (Special Administrative Region of People's Republic of China)
-454 11 HK Hong Kong (Special Administrative Region of People's Republic of China)
-454 12 HK Hong Kong (Special Administrative Region of People's Republic of China)
-454 13 HK Hong Kong (Special Administrative Region of People's Republic of China)
-454 14 HK Hong Kong (Special Administrative Region of People's Republic of China)
-454 15 HK Hong Kong (Special Administrative Region of People's Republic of China)
-454 16 HK Hong Kong (Special Administrative Region of People's Republic of China)
-454 17 HK Hong Kong (Special Administrative Region of People's Republic of China)
-454 18 HK Hong Kong (Special Administrative Region of People's Republic of China)
-454 19 HK Hong Kong (Special Administrative Region of People's Republic of China)
-454 29 HK Hong Kong (Special Administrative Region of People's Republic of China)
+454 00 HK Hong Kong
+454 01 HK Hong Kong
+454 02 HK Hong Kong
+454 03 HK Hong Kong
+454 04 HK Hong Kong
+454 05 HK Hong Kong
+454 06 HK Hong Kong
+454 07 HK Hong Kong
+454 08 HK Hong Kong
+454 09 HK Hong Kong
+454 10 HK Hong Kong
+454 11 HK Hong Kong
+454 12 HK Hong Kong
+454 13 HK Hong Kong
+454 14 HK Hong Kong
+454 15 HK Hong Kong
+454 16 HK Hong Kong
+454 17 HK Hong Kong
+454 18 HK Hong Kong
+454 19 HK Hong Kong
+454 22 HK Hong Kong
+454 29 HK Hong Kong
 455 00 MO Macau (People's Republic of China)
 455 01 MO Macau (People's Republic of China)
 455 02 MO Macau (People's Republic of China)
@@ -1213,6 +1275,8 @@
 510 27 ID Indonesia
 510 28 ID Indonesia
 510 89 ID Indonesia
+510 995 ID Indonesia
+510 996 ID Indonesia
 510 99 ID Indonesia
 514 01 TL East Timor
 514 02 TL East Timor
@@ -1233,6 +1297,7 @@
 520 15 TH Thailand
 520 18 TH Thailand
 520 23 TH Thailand
+520 25 TH Thailand
 520 99 TH Thailand
 525 01 SG Singapore
 525 02 SG Singapore
@@ -1266,6 +1331,7 @@
 542 01 FJ Fiji
 542 02 FJ Fiji
 544 11 AS American Samoa (United States of America)
+545 01 KI Kiribati
 545 09 KI Kiribati
 546 01 NC New Caledonia (France)
 547 20 PF French Polynesia (France)
@@ -1273,6 +1339,7 @@
 549 01 WS Samoa
 549 27 WS Samoa
 550 01 FM Federated States of Micronesia
+551 01 MH Marshall Islands
 552 01 PW Palau
 552 80 PW Palau
 553 01 TV Tuvalu
@@ -1391,6 +1458,7 @@
 631 04 AO Angola
 632 02 GW Guinea-Bissau
 632 03 GW Guinea-Bissau
+632 07 GW Guinea-Bissau
 633 01 SC Seychelles
 633 02 SC Seychelles
 633 10 SC Seychelles
@@ -1423,15 +1491,20 @@
 640 06 TZ Tanzania
 640 07 TZ Tanzania
 640 08 TZ Tanzania
+640 11 TZ Tanzania
 641 01 UG Uganda
 641 10 UG Uganda
 641 11 UG Uganda
 641 14 UG Uganda
 641 22 UG Uganda
+641 33 UG Uganda
+641 44 UG Uganda
+641 66 UG Uganda
 642 01 BI Burundi
 642 02 BI Burundi
 642 03 BI Burundi
 642 07 BI Burundi
+642 08 BI Burundi
 642 82 BI Burundi
 643 01 MZ Mozambique
 643 03 MZ Mozambique
@@ -1483,7 +1556,7 @@
 702 67 BZ Belize
 702 99 BZ Belize
 704 01 GT Guatemala
-704 02 GT Guatemala
+704 0201 GT Guatemala
 704 03 GT Guatemala
 706 01 SV El Salvador
 706 02 SV El Salvador
@@ -1494,7 +1567,7 @@
 708 30 HN Honduras
 708 40 HN Honduras
 710 21 NI Nicaragua
-710 300 NI Nicaragua
+710 30 NI Nicaragua
 710 73 NI Nicaragua
 712 017 CR Costa Rica
 712 01 CR Costa Rica
