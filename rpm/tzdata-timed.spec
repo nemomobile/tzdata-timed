@@ -9,7 +9,7 @@ Name:       tzdata-timed
 # << macros
 
 Summary:    Data files for the time daemon, timed
-Version:    2013d
+Version:    2013h
 Release:    1
 Group:      System/System Control
 License:    Public Domain
@@ -35,7 +35,7 @@ and mobile country codes.
 # << build pre
 
 
-make %{?jobs:-j%jobs}
+make %{?_smp_mflags}
 
 # >> build post
 # << build post
