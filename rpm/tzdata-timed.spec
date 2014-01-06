@@ -9,7 +9,7 @@ Name:       tzdata-timed
 # << macros
 
 Summary:    Data files for the time daemon, timed
-Version:    2013h
+Version:    2013i
 Release:    1
 Group:      System/System Control
 License:    Public Domain

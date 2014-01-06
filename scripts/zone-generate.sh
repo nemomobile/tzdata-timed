@@ -85,7 +85,7 @@ rm -rf $output $signatures $md5sum && mkdir -p $output
 input="$source_dir/africa $source_dir/antarctica $source_dir/asia $source_dir/australasia $source_dir/europe $source_dir/northamerica $source_dir/southamerica"
 input="$input $iso8601"
 input="$input $source_dir/etcetera $source_dir/factory $source_dir/systemv $source_dir/backward"
-input="$input $source_dir/solar87 $source_dir/solar88 $source_dir/solar89"
+#input="$input $source_dir/solar87 $source_dir/solar88 $source_dir/solar89"
 
 for i in $input ; do
   echo "Processing '$i'"
