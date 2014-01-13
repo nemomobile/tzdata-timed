@@ -108,6 +108,21 @@ zones=$(
   done
 )
 
+# Replace duplicates, hardlinks with symlinks. Adapted from Ubuntu tzdata
+# package version 2012e-0ubuntu0.12.04.1
+cd $output
+fdupes -1 -H -q -r . | while read line ; do
+    set -- ${line}
+    tgt="${1##./}"
+    shift
+    while [ "$#" != 0 ] ; do
+	link="${1##./}"
+	reltgt="$(echo $link | sed -e 's,[^/]\+$,,g' -e 's,[^/]\+,..,g')${tgt}"
+	ln -sf ${reltgt} ${link}
+	shift
+    done
+done
+
 ( cd $output && md5sum $zones ) > $md5sum
 $signature $output $zones > $signatures
 cat $input | pcregrep '^\s*Link\s+' > $links
