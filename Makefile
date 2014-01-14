@@ -5,6 +5,7 @@ TZDB_DIR=$(CURDIR)/iana.org
 SRC_DIR=$(CURDIR)/src
 BUILD_DIR=$(CURDIR)/build
 INSTALL_DIR=/usr/share/tzdata-timed
+ZONE_INSTALL_DIR=/usr/share/zoneinfo
 INSTALL_ROOT?=""
 
 all: prepare-timed-data
@@ -74,6 +75,10 @@ install:
 	cp $(BUILD_DIR)/single.data $(INSTALL_ROOT)$(INSTALL_DIR)
 	cp $(BUILD_DIR)/zones-by-country.data $(INSTALL_ROOT)$(INSTALL_DIR)
 	cp $(BUILD_DIR)/zone.alias $(INSTALL_ROOT)$(INSTALL_DIR)
+	mkdir -p $(INSTALL_ROOT)$(ZONE_INSTALL_DIR) $(INSTALL_ROOT)$(ZONE_INSTALL_DIR)/right  $(INSTALL_ROOT)$(ZONE_INSTALL_DIR)/posix
+	cp -r $(BUILD_DIR)/zones/Iso8601 $(INSTALL_ROOT)$(ZONE_INSTALL_DIR)
+	cp -r $(BUILD_DIR)/zones/right/Iso8601 $(INSTALL_ROOT)$(ZONE_INSTALL_DIR)/right
+	cp -r $(BUILD_DIR)/zones/posix/Iso8601 $(INSTALL_ROOT)$(ZONE_INSTALL_DIR)/posix
 
 clean:
 	rm -rf $(SRC_DIR) $(BUILD_DIR)

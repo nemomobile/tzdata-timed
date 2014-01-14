@@ -53,4 +53,5 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 # >> files
 %{_datadir}/tzdata-timed
+%{_datadir}/zoneinfo
 # << files
