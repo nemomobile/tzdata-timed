@@ -29,6 +29,8 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <unistd.h>
+
 using namespace std ;
 
 const int year = 2010 ;
