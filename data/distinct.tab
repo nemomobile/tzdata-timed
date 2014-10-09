@@ -107,6 +107,10 @@ KZ	+5113+05121	Asia/Oral	West Kazakhstan
 MN	+4755+10653	Asia/Ulaanbaatar	most locations
 MN	+4801+09139	Asia/Hovd	Bayan-Olgiy, Govi-Altai, Hovd, Uvs, Zavkhan
 
+# MCC=460, China (CN)
+CN	+3114+12128	Asia/Shanghai	east China - Beijing, Guangdong, Shanghai, etc.
+CN	+4348+08735	Asia/Urumqi	Xinjiang Time
+
 # MCC=505, Australia (AU) has 12 zones
 # but it seems to be 4 major in winter and 5 in summer.
 # List them East to West:
